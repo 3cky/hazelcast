@@ -97,10 +97,10 @@ public class ConcurrentMapManager extends BaseManager {
         node.executorManager.getScheduledExecutorService().scheduleAtFixedRate(new Runnable() {
             public void run() {
                 try {
-					startCleanup(true, false);
-				} catch (Throwable t) {
-		            logger.log(Level.WARNING, t.getMessage(), t);
-				}
+                    startCleanup(true, false);
+                } catch (Throwable t) {
+                    logger.log(Level.WARNING, t.getMessage(), t);
+                }
             }
         }, 1, 1, TimeUnit.SECONDS);
         registerPacketProcessor(CONCURRENT_MAP_GET_MAP_ENTRY, new GetMapEntryOperationHandler());
